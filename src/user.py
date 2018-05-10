@@ -6,7 +6,7 @@ def open_file(filename):
 		fp = open(filename)
 	except IOError as e:
 		if e.errno == errno.ENOENT:
-			print "Error: Cannot find file user_info.config at src/"
+			print "Error: Cannot find file {} at src/".format(filename)
 			return None
 		raise
 	else:
@@ -21,7 +21,9 @@ def read_user_info():
 		m = re.search(r'(.+)="(.+)"', line)
 		if m:
 			user[m.group(1)] = m.group(2)
-	#pprint(user)
+		else:
+			print("Error: formatting errors detected. Is your user_info.config correctly formatted?")
+			return None
 	return user
 def main():
 	read_user_info()
