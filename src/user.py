@@ -12,21 +12,23 @@ def open_file(filename):
 	else:
 		with fp:
 			return fp.readlines()
-def read_user_info():
-	infos = open_file("user_info.config")
-	if infos is None:
+def read_info(filename):
+	lines = open_file(filename)
+	if lines is None:
 		return None
-	user = dict()
-	for line in infos:
+	infos = dict()
+	for line in lines:
+		if line.startswith('#') or line.isspace(): #skip comments
+			continue
 		m = re.search(r'(.+)="(.+)"', line)
 		if m:
-			user[m.group(1)] = m.group(2)
+			infos[m.group(1)] = m.group(2)
 		else:
-			print("Error: formatting errors detected. Is your user_info.config correctly formatted?")
+			print("Error: formatting errors detected. Is your {} correctly formatted?".format(filename))
 			return None
-	return user
+	return infos
 def main():
-	read_user_info()
-
+	infos = read_info("user_info.config")
+	pprint(infos)
 if __name__ == "__main__":
 	main()
