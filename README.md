@@ -31,7 +31,9 @@ cd EVA_Instrumentality
 
 Organize your files:
 
-The program replies on your file structure to determine the relationships between your projects, analyses, and files. Thus, it is crucial that you organize your files correctly for the program to generate correct metadata file.
+The program relies on your file structure to determine the relationships between your projects, analyses, and files. Thus, it is crucial that you organize your files correctly for the program to generate correct metadata file.
+
+*Alternatively, you can refer to FAQ to make your own metadata file if you do not wish to re-organize your files*
 
 You should have a folder for each project. 
 
