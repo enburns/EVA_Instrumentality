@@ -43,7 +43,7 @@ Variant files associated with each analysis should be put under the analysis fol
 
 info.config file should be put directly under the project/analysis folder they belong to.
 
-See below structure (trailing slash ```\``` indicates a directory instead of a file)
+See below structure (trailing slash ```/``` indicates a directory instead of a file)
 
 * project1/
    * project_info.config (optional)
