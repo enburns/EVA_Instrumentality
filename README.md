@@ -1,7 +1,14 @@
 # EVA_Instrumentality
-This project is aimed at helping researchers submit to European Variant Archive with ease by aiding completion of metadata required by the archive.
+This program is aimed at helping researchers submit to European Variant Archive with ease by aiding completion of metadata required by the archive.
 
-What you will need:
+## Issues, bugs :bug:, and new feature requests
+Please open an issue in this repository. When reporting an issue, please provide sufficient information to reproduce the error. Some examples include:
+
+* Full error message
+* Files associated with error message
+* OS information (Linux/Mac OS/Windows)
+
+## What you will need:
 * All your variant files (vcf, gff, bed, etc.) organized as instructed below
 * *python2*
 * python module *openpyxl*
@@ -10,7 +17,7 @@ What you will need:
      pip install openpyxl
      ```
   * You can check if you have *openpyxl* available by doing the following:
-    ```
+    ```python
     python2
     >>> from openpyxl import Workbook
     ```
@@ -21,7 +28,7 @@ What you will need:
 * (Optional) analysis_info.config file
 
 
-Get started:
+## Get started:
 
 Copy this repository to your local machine:
 ```shell
@@ -29,7 +36,7 @@ git clone https://github.com/SichongP/EVA_Instrumentality
 cd EVA_Instrumentality
 ```
 
-Organize your files:
+## Organize your files:
 
 The program relies on your file structure to determine the relationships between your projects, analyses, and files. Thus, it is crucial that you organize your files correctly for the program to generate correct metadata file.
 
@@ -44,7 +51,7 @@ Variant files associated with each analysis should be put under the analysis fol
 info.config file should be put directly under the project/analysis folder they belong to.
 
 See below structure (trailing slash ```/``` indicates a directory instead of a file)
-
+```
 * project1/
    * project_info.config (optional)
    * analysis1/
@@ -65,3 +72,4 @@ See below structure (trailing slash ```/``` indicates a directory instead of a f
       * analysis_info.config (optional)
       * file4_1.vcf
       * file4_2.vcf
+```
