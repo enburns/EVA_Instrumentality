@@ -86,6 +86,8 @@ class analysis:
 				self.anly_info_loaded = True
 			elif os.path.isfile(os.path.join(path,dir)):
 				self.files.append(file(self, os.path.join(path,dir)))
+			else:
+				print("Unrecognized file {}, ignoring...".format(dir))
 		if not self.anly_info_loaded:
 			print("No analysis info file found in {}, be sure you input them manually".format(path))
 		if not self.title:
@@ -131,11 +133,10 @@ class project:
 				self.read_proj_info(os.path.join(path,dir))
 				self.proj_info_loaded = True
 			elif os.path.isdir(os.path.join(path,dir)):
-				print("Adding analysis {}".format(dir))
 				self.analysis_count += 1
 				self.analyses.append(analysis(self, self.analysis_count, os.path.join(path,dir)))
 			else:
-				print("What is {}???".format(dir))
+				print("Unrecognized file {}, ignoring...".format(dir))
 		if not self.proj_info_loaded:
 			print("No project info file found in {}, be sure you input them manually".format(path))
 		if not self.title:
