@@ -25,7 +25,7 @@ def write_file_tab(file, tab, file_count):
 	tab.cell(row=file_count+1, column=4, value=file.md5)
 
 def write(read_user, user_infos, projects, out):
-	wb = openpyxl.load_workbook(filename='EVA_Submission_template.V1.1.0.xlsx')
+	wb = openpyxl.load_workbook(filename='src/EVA_Submission_template.V1.1.0.xlsx')
 	if read_user:
 		ws = wb['Submitter Details']
 		ws['A2'] = user_infos['LAST_NAME']

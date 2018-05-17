@@ -2,9 +2,7 @@
 import os
 import os.path
 import argparse
-import project
-import writexl
-import user
+from src import project, writexl, user
 from pprint import pprint
 from datetime import date
 #usage: mkmetadata [options] path_to_project_folder
