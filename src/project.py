@@ -97,7 +97,10 @@ class analysis:
 			(temp, self.title) = os.path.split(path)
 		if not self.alias:
 		#analysis alias not provided by user, auto-generating...
-			self.alias = analysis_count
+			if proj.alias:
+				self.alias = proj.alias + "_" + str(analysis_count)
+			else:
+				self.alias = proj.title + "_" + str(analysis_count)
 class project:
 	def read_proj_info(self, path):
 		prj_infos = read_info(path)
@@ -129,14 +132,9 @@ class project:
 		self.analysis_count = 0 #record the how many analyses are encountered in case users don't provide analysis alias
 		for dir in os.listdir(path):
 			if dir == "project_info.config":
-			#project_info.config file detected, read info from file
+			#Look for project_info.config file, if detected, read info from file
 				self.read_proj_info(os.path.join(path,dir))
 				self.proj_info_loaded = True
-			elif os.path.isdir(os.path.join(path,dir)):
-				self.analysis_count += 1
-				self.analyses.append(analysis(self, self.analysis_count, os.path.join(path,dir)))
-			else:
-				print("Unrecognized file {}, ignoring...".format(dir))
 		if not self.proj_info_loaded:
 			print("No project info file found in {}, be sure you input them manually".format(path))
 		if not self.title:
@@ -144,6 +142,12 @@ class project:
 			if path.endswith(os.sep):
 				path = path.rstrip(os.sep) #remove trailing slash if existed so we can get project folder name
 			(temp, self.title) = os.path.split(path)
+		for dir in os.listdir(path):
+			if os.path.isdir(os.path.join(path,dir)):
+				self.analysis_count += 1
+				self.analyses.append(analysis(self, self.analysis_count, os.path.join(path,dir)))
+			else:
+				print("Unrecognized file {}, ignoring...".format(dir))
 def main():
 	a = project("/mnt/c/Users/pengs/GoogleDrive/FinnoLab/git_repo/EVA_Instrumentality/sample_structure/equine_NAD_CGAS/")
 	a.print_proj_info()
