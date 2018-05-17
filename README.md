@@ -45,7 +45,7 @@ chmod +x mkmetadata
 ```
 mkmetadata will scan all folders under ```path_to_directory_containing_all_projects``` you provided and treat each folder as a project. So make sure you have all project folders under one single folder and no other folders in there
 
-4. Additionally, you can provide a configuration file containing your information so mkmetadata can autofill "Submitter Details" sheet. A template config file can be found at src/user_info.config. [See here]("https://github.com/SichongP/EVA_Instrumentality/blob/master/config_guidline.md") for more information.
+4. Additionally, you can provide a configuration file containing your information so mkmetadata can autofill "Submitter Details" sheet. A template config file can be found at src/user_info.config. [See here](https://github.com/SichongP/EVA_Instrumentality/blob/master/config_guidline.md) for more information.
 To include a user information file, use ```--user user_info.config```
 
 5. Complete the rest of metadata file. (See FAQ for help)
