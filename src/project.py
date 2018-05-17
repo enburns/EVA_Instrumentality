@@ -143,6 +143,8 @@ class project:
 				path = path.rstrip(os.sep) #remove trailing slash if existed so we can get project folder name
 			(temp, self.title) = os.path.split(path)
 		for dir in os.listdir(path):
+			if dir == "project_info.config":
+				continue
 			if os.path.isdir(os.path.join(path,dir)):
 				self.analysis_count += 1
 				self.analyses.append(analysis(self, self.analysis_count, os.path.join(path,dir)))

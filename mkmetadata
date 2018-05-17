@@ -20,13 +20,14 @@ read_user = False
 user_infos = None
 if os.path.isfile(a.out):
 	print("Error! output file {} already exists! Use another output file name!".format(a.out))
+	exit(0)
 if a.user:
-	print(a.user)
+#	print(a.user)
 	user_infos = user.read_info(a.user)
 	read_user = True
-	pprint(user_infos)
+#	pprint(user_infos)
 projects = []
 for dir in os.listdir(a.path):
-	print(dir)
+#	print(dir)
 	projects.append(project.project(os.path.join(a.path,dir)))
 writexl.write(read_user, user_infos, projects, a.out)
