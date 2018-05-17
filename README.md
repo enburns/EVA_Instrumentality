@@ -50,6 +50,7 @@ To include a user information file, use ```--user user_info.config```
 
 5. Complete the rest of metadata file. (See FAQ for help)
 
+[**See here for a sample workflow**](https://github.com/SichongP/EVA_Instrumentality/blob/master/sample_workflow.md)
 
 ## Organize your files:
 
