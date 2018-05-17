@@ -41,3 +41,5 @@ Unrecognized file project_info.config, ignoring...
 No analysis info file found in sample_structure/equine_NAD_CGAS/WGAS_analysis, be sure you input them manually
 ```
 You are seeing theses warnings because we don't have many of the config files available for the program to use. You thus need to input these data once you have test.xlsx
+
+6. You can now open test.xlsx file and see some information autofilled
