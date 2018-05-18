@@ -35,9 +35,7 @@ You should see output like this:
 ```
 No project info file found in sample_structure/equine_IMM, be sure you input them manually
 No analysis info file found in sample_structure/equine_IMM/IMM_CGAS, be sure you input them manually
-equine_NAD_CGAS
 No analysis info file found in sample_structure/equine_NAD_CGAS/CGAS_analysis, be sure you input them manually
-Unrecognized file project_info.config, ignoring...
 No analysis info file found in sample_structure/equine_NAD_CGAS/WGAS_analysis, be sure you input them manually
 ```
 You are seeing theses warnings because we don't have many of the config files available for the program to use. You thus need to input these data once you have test.xlsx
