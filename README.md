@@ -1,7 +1,5 @@
 # EVA_Instrumentality
-This program is aimed at helping researchers submit variants to European Variant Archive with ease by aiding completion of metadata required by the archive.
-
-add something
+This program is aimed at helping researchers submit their samples to the European Variant Archive with ease by aiding completion of metadata required by the archive.
 
 ## Issues, bugs :bug:, and new feature requests
 Please open an issue in this repository. When reporting an issue, please provide sufficient information to reproduce the error. Some examples include:
